@@ -13,6 +13,9 @@ async function changeFiele() {
 
 async function start() {
     console.log(`北京时间 (UTC+08)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}}`);
+    console.log('添加助力码开始');
+    let response = await axios.get('http://api.turinglabs.net/api/v1/jd/ddfactory/create/P04z54XCjVWnYaS5m9cZ2X81C4ekS9hP1PXiSQ');
+    console.log('返回码：${response}');
     if (process.env.JD_COOKIE) {
         console.log(`当前共${process.env.JD_COOKIE.split("&").length}个账号需要签到`);
     } else {
